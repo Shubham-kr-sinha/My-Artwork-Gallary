@@ -1,9 +1,11 @@
 # Shubham's Art Gallery
 
-A stunning, interactive artwork portfolio website designed with traditional Indian aesthetics and modern web animations. This project showcases a collection of artwork in a continuous, auto-scrolling gallery with immersive viewing features.
+A stunning, interactive artwork portfolio website designed with modern web animations. This project showcases a collection of artwork in a continuous, auto-scrolling gallery with immersive viewing features.
 
-![Project Preview]()
-*(Note: Replace with a screenshot of your actual website UI)*
+<img width="1898" height="864" alt="image" src="https://github.com/user-attachments/assets/861576d3-a097-4b09-821e-047cc88023e4" />
+<img width="1899" height="866" alt="image" src="https://github.com/user-attachments/assets/a260aee4-5c5a-4275-ae68-4ae686ba21a9" />
+
+)
 
 ## 🎨 Features
 
@@ -11,9 +13,6 @@ A stunning, interactive artwork portfolio website designed with traditional Indi
 - **Micro-Interactions**: 
   - **Hover-to-Pause**: The gallery pauses when you hover over it, allowing for detailed inspection.
   - **Click-to-Zoom**: Opens any artwork in a full-screen, immersive Lightbox modal.
-- **Indian Aesthetic Theme**:
-  - Curated color palette featuring Saffron, Indigo, and Earth tones.
-  - Classic Typography using *Cormorant Garamond* and *Eczar* fonts.
 - **Responsive Design**: Fully optimized for desktops, tablets, and mobile devices.
 
 ## 🛠️ Tech Stack
