@@ -2,7 +2,7 @@
 
 A stunning, interactive artwork portfolio website designed with modern web animations. This project showcases a collection of artwork in a continuous, auto-scrolling gallery with immersive viewing features.
 
-(<img width="1898" height="864" alt="image" src="https://github.com/user-attachments/assets/861576d3-a097-4b09-821e-047cc88023e4" />
+<img width="1898" height="864" alt="image" src="https://github.com/user-attachments/assets/861576d3-a097-4b09-821e-047cc88023e4" />
 <img width="1899" height="866" alt="image" src="https://github.com/user-attachments/assets/a260aee4-5c5a-4275-ae68-4ae686ba21a9" />
 
 )
