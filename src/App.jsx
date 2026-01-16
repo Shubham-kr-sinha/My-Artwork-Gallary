@@ -22,7 +22,7 @@ function App() {
             "Art enables us to find ourselves and lose ourselves at the same time."
           </p>
           <div style={{ marginTop: '2rem' }}>
-            <p style={{ fontSize: '0.9rem', letterSpacing: '2px' }}>A JOURNEY THROUGH ART</p>
+            <p style={{ fontSize: '0.9rem', letterSpacing: '2px' }}>MY JOURNEY THROUGH ART</p>
           </div>
         </div>
       </header>
