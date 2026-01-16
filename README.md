@@ -2,7 +2,7 @@
 
 A stunning, interactive artwork portfolio website designed with traditional Indian aesthetics and modern web animations. This project showcases a collection of artwork in a continuous, auto-scrolling gallery with immersive viewing features.
 
-![Project Preview](/public/artworks/art4.jpg)
+![Project Preview]()
 *(Note: Replace with a screenshot of your actual website UI)*
 
 ## 🎨 Features
