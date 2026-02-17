@@ -33,17 +33,12 @@ const Gallery = () => {
             if (!isHovering) {
                 scrollContainer.scrollLeft += scrollSpeed;
 
-                // Reset scroll position to create infinite loop effect
-                // If we have scrolled past the first set of items (approx 1/4 of total content width)
-                // We reset to the start.
-                // Total width relies on content. Let's assume average width per item roughly.
-                // A better way is checking scrollWidth vs scrollLeft.
+                // Dynamic width calculation for responsive infinite loop
+                // We have 4 sets of artworks
+                const singleSetWidth = scrollContainer.scrollWidth / 4;
 
-                // One set width approx: 8 items * (300px + 4rem gap) ~= 8 * 364 = 2912
-                const singleSetWidth = artworks.length * 364;
-
-                if (scrollContainer.scrollLeft >= singleSetWidth) {
-                    scrollContainer.scrollLeft = 0; // or -= singleSetWidth for smoothness if slightly over
+                if (singleSetWidth > 0 && scrollContainer.scrollLeft >= singleSetWidth) {
+                    scrollContainer.scrollLeft -= singleSetWidth;
                 }
             }
             animationFrameId.current = requestAnimationFrame(animate);
@@ -57,10 +52,10 @@ const Gallery = () => {
     }, [isHovering]);
 
     return (
-        <section style={{ position: 'relative', overflow: 'hidden', padding: '5rem 0', background: 'var(--bg-cream)' }}>
-            <div style={{ marginBottom: '2rem', textAlign: 'center' }}>
-                <h2 style={{ fontSize: '3rem', color: 'var(--saffron)' }}>My Journey</h2>
-                <p style={{ color: 'var(--indigo)' }}>Hover to pause • Swipe to scroll • Click to zoom</p>
+        <section className="section-padding" style={{ position: 'relative', overflow: 'hidden', background: 'var(--bg-cream)' }}>
+            <div style={{ textAlign: 'center' }}>
+                <h2 className="gallery-title">My Journey</h2>
+                <p className="gallery-subtitle">Hover to pause • Swipe to scroll • Click to zoom</p>
             </div>
 
             <div
@@ -70,16 +65,16 @@ const Gallery = () => {
                     overflowX: 'auto',
                     display: 'flex',
                     cursor: 'grab',
-                    scrollBehavior: 'auto', // Important: 'smooth' might interfere with continuous JS scrolling
+                    scrollBehavior: 'auto',
                     whiteSpace: 'nowrap',
-                    paddingBottom: '2rem' // Space for scrollbar if visible (hidden via CSS usually)
+                    paddingBottom: '2rem'
                 }}
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
                 onTouchStart={() => setIsHovering(true)}
                 onTouchEnd={() => setIsHovering(false)}
             >
-                <div style={{ display: 'flex', gap: '4rem', paddingLeft: '2rem' }}>
+                <div className="gallery-track">
                     {displayArtworks.map((art, i) => (
                         <ArtworkCard
                             key={i}
@@ -101,55 +96,22 @@ const Gallery = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setSelectedId(null)}
-                        style={{
-                            position: 'fixed',
-                            top: 0,
-                            left: 0,
-                            width: '100vw',
-                            height: '100vh',
-                            background: 'rgba(0,0,0,0.9)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            zIndex: 200
-                        }}
+                        className="modal-overlay"
                     >
                         <motion.div
-                            style={{
-                                background: '#fff',
-                                padding: '1rem',
-                                borderRadius: '4px',
-                                maxWidth: '90vw',
-                                maxHeight: '90vh',
-                                position: 'relative',
-                                boxShadow: '0 0 50px rgba(211, 84, 0, 0.5)'
-                            }}
+                            className="modal-content"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
                                 onClick={() => setSelectedId(null)}
-                                style={{
-                                    position: 'absolute',
-                                    top: '-50px',
-                                    right: 0,
-                                    background: 'none',
-                                    border: 'none',
-                                    color: '#fff',
-                                    fontSize: '3rem',
-                                    cursor: 'pointer'
-                                }}
+                                className="modal-close-btn"
                             >
                                 &times;
                             </button>
                             <img
                                 src={selectedId.src}
                                 alt={selectedId.title}
-                                style={{
-                                    maxWidth: '100%',
-                                    maxHeight: '80vh',
-                                    objectFit: 'contain',
-                                    border: '4px solid var(--saffron)'
-                                }}
+                                className="modal-image"
                             />
                             <h3 style={{ textAlign: 'center', marginTop: '1rem', fontFamily: 'Eczar', color: 'var(--text-dark)' }}>{selectedId.title}</h3>
                         </motion.div>

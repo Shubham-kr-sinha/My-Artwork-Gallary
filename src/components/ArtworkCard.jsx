@@ -11,18 +11,6 @@ const ArtworkCard = ({ src, title, index, onClick }) => {
       whileInView={{ opacity: 1, scale: 1 }}
       whileHover={{ scale: 1.05, cursor: 'pointer', zIndex: 10 }}
       transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-      style={{
-        flexShrink: 0,
-        height: '400px',
-        width: '300px',
-        margin: '0 2rem',
-        position: 'relative',
-        backgroundColor: '#fff',
-        padding: '1rem',
-        boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-        border: '2px solid var(--saffron)',
-      }}
     >
       <div style={{
         width: '100%',

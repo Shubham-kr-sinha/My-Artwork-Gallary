@@ -4,21 +4,10 @@ import Gallery from './components/Gallery';
 function App() {
   return (
     <div className="App">
-      <header style={{
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        background: 'linear-gradient(to bottom, #FDFBF7, #f0e6d2)',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-
+      <header className="hero-header">
         <div style={{ zIndex: 5, position: 'relative' }}>
-          <h1 style={{ fontSize: '5rem', marginBottom: '1rem', color: 'var(--saffron)' }}>SHUBHAM'S ART</h1>
-          <p style={{ fontSize: '1.5rem', maxWidth: '600px', fontStyle: 'italic', color: 'var(--indigo)', margin: '0 auto' }}>
+          <h1 className="hero-title">SHUBHAM'S ART</h1>
+          <p className="hero-subtitle">
             "Art enables us to find ourselves and lose ourselves at the same time."
           </p>
           <div style={{ marginTop: '2rem' }}>
