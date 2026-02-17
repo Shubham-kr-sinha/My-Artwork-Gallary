@@ -10,7 +10,8 @@ const artworks = [
     { src: '/artworks/art2.jpg', title: 'Harry Potter' },
     { src: '/artworks/art6.jpg', title: 'Gal Gadot' },
     { src: '/artworks/art5.jpg', title: 'Spider Man' },
-    { src: '/artworks/art7.jpg', title: 'Madhubani Painting'}
+    { src: '/artworks/art7.jpg', title: 'Madhubani Painting' },
+    { src: '/artworks/art9.jpg', title: 'Iron Man' }
 ];
 
 const Gallery = () => {
